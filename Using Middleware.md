@@ -2,13 +2,13 @@ _How to use middleware_
 
 ### Introduction
 
-This optional feature allows a Munki Admin to use third party, or their own code to manipulate Munki's HTTP requests. The primary use case for this feature is to provide interaction with API's, although it is not limited to that. Middleware is activated by the presence of a Python file. If it's there it gets called, if it's not it won't, it's as simple as that.
+This optional feature allows a Munki Admin to use their own code, or from a third party to manipulate Munki's HTTP requests. The primary use case for this feature is to provide interaction with APIs, although it is not limited to that. Middleware is activated by the presence of a Python file. If it's there it gets called, if it's not it won't, it's as simple as that.
 
 
 ### Details
 
 Middleware gets imported at runtime as a Python module so the middleware file **must** be written in Python. Nothing is stopping you from then calling another executable from Python, so in that sense, you're not limited to Python.  
-At the beginning of the Munki run, Munki searches for "middleware*.py", it then tries to import it then looks for the function, "process_request_options". The options are then sent through, examined, changed, or not, before heading to the server. 
+At the beginning of the Munki run, Munki searches for "middleware*.py". If Munki finds the middleware file it then looks for the function, "process_request_options". The options are then sent through, examined, changed, or not, before heading to the server. 
 
 You may only use one middleware file. If you have more then one of middleware file you **will** have unpredictable results.
 
