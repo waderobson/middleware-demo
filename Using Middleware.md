@@ -43,7 +43,7 @@ _Example function_
     print '***Requesting: %s' % options.get('url')
     return options
 ```
-This is a basic example the options are inbound from Munki, we print the requested url and then return the options unchanged.
+This is a basic example. The options are inbound from Munki, we print the requested url and then return the options unchanged.
 
 
 #### Middleware examples
@@ -115,7 +115,7 @@ Since the 'additional_headers' key is a dictionary it is easy for us to update r
 
 
 ##### Available options
-These are all the options that can be changed with the middleware. 99% of the time you'll only be interested in the **url** and the **additional_headers**
+These are all the options that can be changed with the middleware. Note: 99% of the time you'll only be interested in the **url** and the **additional_headers**
 
 | Key | Type | Description  | Default Value |
 |-----|------|--------------|---------------|
